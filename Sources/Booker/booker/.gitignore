@@ -6,6 +6,7 @@
 /macos/*
 /web/*
 /windows/*
+/lib/generated/*
 
 # Miscellaneous
 *.class
