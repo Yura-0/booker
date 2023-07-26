@@ -1,4 +1,5 @@
 import 'package:booker/core/localization/localization_bloc.dart';
+import 'package:booker/core/theme/theme_bloc.dart';
 import 'package:booker/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localizationBloc = BlocProvider.of<LocalizationBloc>(context);
+    final themeBloc = BlocProvider.of<ThemeBloc>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(S.of(context).hello),
@@ -38,6 +40,14 @@ class HomeScreen extends StatelessWidget {
               child: Text(
                 localizationBloc.state == const Locale('en', '') ? "EN" : "UA",
               ),
+            ),
+            IconButton(
+              onPressed: () {
+                themeBloc.toggleTheme();
+              },
+              icon: themeBloc.state == AppTheme.dark
+                  ? const Icon(Icons.brightness_4)
+                  : const Icon(Icons.brightness_2),
             ),
           ],
         )),
