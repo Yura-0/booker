@@ -2,5 +2,8 @@
   "hello": "Hello",
   "home": "Home",
   "menu": "Menu",
-  "test": "Test"
+  "test": "Test",
+  "statistic": "Statistic",
+  "aboutUs": "About us",
+  "exit": "Exit"
 }
