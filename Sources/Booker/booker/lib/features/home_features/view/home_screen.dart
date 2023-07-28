@@ -1,8 +1,10 @@
-import 'package:booker/core/localization/localization_bloc.dart';
-import 'package:booker/core/theme/theme_bloc.dart';
-import 'package:booker/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:booker/core/localization/localization_bloc.dart';
+import 'package:booker/core/theme/theme_bloc.dart';
+import 'package:booker/features/home_features/widget_exp.dart';
+import 'package:booker/generated/l10n.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,36 +23,9 @@ class HomeScreen extends StatelessWidget {
           Text(S.of(context).home),
         ],
       )),
-      drawer: Drawer(
-        child: DrawerHeader(
-            child: Row(
-          children: [
-            Text(S.of(context).menu),
-            const SizedBox(
-              width: 10,
-            ),
-            TextButton(
-              onPressed: () {
-                localizationBloc.setLocale(
-                  localizationBloc.state == const Locale('en', '')
-                      ? LocaleType.ua
-                      : LocaleType.en,
-                );
-              },
-              child: Text(
-                localizationBloc.state == const Locale('en', '') ? "EN" : "UA",
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                themeBloc.toggleTheme();
-              },
-              icon: themeBloc.state == AppTheme.dark
-                  ? const Icon(Icons.brightness_4)
-                  : const Icon(Icons.brightness_2),
-            ),
-          ],
-        )),
+      drawer: MyDrawer(
+        localizationBloc: localizationBloc,
+        themeBloc: themeBloc,
       ),
     );
   }
