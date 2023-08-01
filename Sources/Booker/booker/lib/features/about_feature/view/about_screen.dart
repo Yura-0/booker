@@ -7,15 +7,15 @@ class AboutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     //screen height
+    //screen height
     double screenHeight = MediaQuery.of(context).size.height;
 
     //sizeBox paddings
     double sizeBoxPaddingScreenHeightCoefficient = 1 / 8;
     double sizeBoxHeightInputPadding =
         screenHeight * sizeBoxPaddingScreenHeightCoefficient;
-    
-    double sizeBoxPaddingScreenHeightBetweenCoefficient = 1/30;
+
+    double sizeBoxPaddingScreenHeightBetweenCoefficient = 1 / 30;
     double sizeBoxHeightBetweenPadding =
         screenHeight * sizeBoxPaddingScreenHeightBetweenCoefficient;
     return Scaffold(

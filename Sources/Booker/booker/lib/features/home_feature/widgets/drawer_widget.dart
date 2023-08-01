@@ -1,8 +1,9 @@
-import 'package:booker/core/fonts.dart';
-import 'package:booker/features/about_feature/view/about_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:booker/core/core_exp.dart';
+import 'package:booker/core/fonts.dart';
+import 'package:booker/features/about_feature/view/about_screen.dart';
 import 'package:booker/generated/l10n.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -59,29 +60,30 @@ class MyDrawer extends StatelessWidget {
             )),
         GestureDetector(
           child: ListTile(
-            title: Text(S.of(context).statistic,
+              title: Text(
+            S.of(context).statistic,
             style: const TextStyle(fontFamily: Fonts.mainFontFamily),
-            )
-          ),
+          )),
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(
-              context, 
-              MaterialPageRoute(builder: (context) => const AboutScreen())
-            );
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const AboutScreen()));
           },
-          child: ListTile(title: Text(S.of(context).aboutUs,
-          style: const TextStyle(fontFamily: Fonts.mainFontFamily),
-          )
-        ),
+          child: ListTile(
+              title: Text(
+            S.of(context).aboutUs,
+            style: const TextStyle(fontFamily: Fonts.mainFontFamily),
+          )),
         ),
         const Divider(),
         GestureDetector(
-          child: ListTile(title: Text(S.of(context).exit,
-          style: const TextStyle(fontFamily: Fonts.mainFontFamily),
-          )
-        ),
+          onTap: () => SystemNavigator.pop(),
+          child: ListTile(
+              title: Text(
+            S.of(context).exit,
+            style: const TextStyle(fontFamily: Fonts.mainFontFamily),
+          )),
         ),
       ]),
     );

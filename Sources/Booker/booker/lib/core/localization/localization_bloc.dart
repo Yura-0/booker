@@ -1,8 +1,9 @@
 import 'dart:ui';
 
-import 'package:booker/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:booker/generated/l10n.dart';
 
 enum LocaleType { en, ua }
 
