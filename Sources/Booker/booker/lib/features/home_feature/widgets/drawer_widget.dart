@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:booker/core/core_exp.dart';
+import 'package:booker/core/fonts.dart';
+import 'package:booker/features/about_feature/view/about_screen.dart';
 import 'package:booker/generated/l10n.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -25,8 +28,7 @@ class MyDrawer extends StatelessWidget {
                 Text(
                   S.of(context).menu,
                   style: const TextStyle(
-                    fontSize: 30,
-                  ),
+                      fontSize: 30, fontFamily: Fonts.mainFontFamily),
                 ),
                 const SizedBox(
                   width: 10,
@@ -43,6 +45,7 @@ class MyDrawer extends StatelessWidget {
                     localizationBloc.state == const Locale('en', '')
                         ? "EN"
                         : "UA",
+                    style: const TextStyle(fontFamily: Fonts.mainFontFamily),
                   ),
                 ),
                 IconButton(
@@ -56,14 +59,31 @@ class MyDrawer extends StatelessWidget {
               ],
             )),
         GestureDetector(
-          child: ListTile(title: Text(S.of(context).statistic)),
+          child: ListTile(
+              title: Text(
+            S.of(context).statistic,
+            style: const TextStyle(fontFamily: Fonts.mainFontFamily),
+          )),
         ),
         GestureDetector(
-          child: ListTile(title: Text(S.of(context).aboutUs)),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const AboutScreen()));
+          },
+          child: ListTile(
+              title: Text(
+            S.of(context).aboutUs,
+            style: const TextStyle(fontFamily: Fonts.mainFontFamily),
+          )),
         ),
         const Divider(),
         GestureDetector(
-          child: ListTile(title: Text(S.of(context).exit)),
+          onTap: () => SystemNavigator.pop(),
+          child: ListTile(
+              title: Text(
+            S.of(context).exit,
+            style: const TextStyle(fontFamily: Fonts.mainFontFamily),
+          )),
         ),
       ]),
     );

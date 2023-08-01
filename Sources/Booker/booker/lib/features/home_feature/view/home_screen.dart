@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:booker/core/localization/localization_bloc.dart';
 import 'package:booker/core/theme/theme_bloc.dart';
-import 'package:booker/features/home_features/widget_exp.dart';
+import 'package:booker/features/home_feature/home_widget_exp.dart';
 import 'package:booker/generated/l10n.dart';
 
 class HomeScreen extends StatelessWidget {

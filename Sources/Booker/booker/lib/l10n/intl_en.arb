@@ -5,5 +5,13 @@
   "test": "Test",
   "statistic": "Statistic",
   "aboutUs": "About us",
-  "exit": "Exit"
+  "exit": "Exit",
+  "booker": "Booker",
+  "bookerDescription": "Booker is a free open-source mobile app for counting finances. With Booker you can see your income and expenses and manage them wisely.\n",
+  "motivation": "Motivation",
+  "motivationDescription": "The app was made as a training project. The developer gets new experience and hone their skills. Also, it is hoped that this application will help you better manage your financial life, which will improve it is quality.\n",
+  "author": "Author",
+  "authorDescription": "Designed / Directed / Produced / Developed by ",
+  "authorName": "Yura-0",
+  "errorOpeningLink": "Error opening link."
 }
